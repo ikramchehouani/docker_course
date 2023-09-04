@@ -1,0 +1,38 @@
+version: '3'
+services:
+  client:
+    image: node:14
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./client:/app
+    networks:
+      - mynetwork
+
+  server:
+    image: node:14
+    build:
+      context: ./server
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./server:/app
+    networks:
+      - mynetwork
+
+  mongodb:
+    image: mongo:4.4
+    volumes:
+      - ./mongo_data:/data/db
+    networks:
+      - mynetwork
+
+volumes:
+  mongo_data:
+  mynetwork:
