@@ -32,4 +32,5 @@ COPY --from=builder /app .
 EXPOSE 3000
 
 # Command to start the server
-CMD ["node", "app.js"]
+CMD ["node", "database.js"]
+
