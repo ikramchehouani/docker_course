@@ -4,15 +4,15 @@ services:
     image: node:14
     build:
       context: ./client
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
     volumes:
-      - ./client:/app
+      - ./client:/app 
     networks:
-      - mynetwork
-
+      - mynetwork 
   server:
     image: node:14
     build:
@@ -24,15 +24,14 @@ services:
     volumes:
       - ./server:/app
     networks:
-      - mynetwork
+      - mynetwork 
 
   mongodb:
     image: mongo:4.4
     volumes:
       - ./mongo_data:/data/db
     networks:
-      - mynetwork
+      - mynetwork 
 
-volumes:
-  mongo_data:
+networks:
   mynetwork:

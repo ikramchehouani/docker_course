@@ -4,8 +4,11 @@ FROM node:14
 # Set working directory in container
 WORKDIR /app
 
-# Copy client files to container
+# Copy client files from the build context to container
 COPY . .
+
+# Debug: List contents of /app
+RUN ls -la /app
 
 # Install dependencies
 RUN npm install
