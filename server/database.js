@@ -1,5 +1,5 @@
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://icram:nonmaislol@clusterfirst.kmoxvfv.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -18,6 +18,14 @@ async function run() {
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    const database = client.db("ika");
+    const collection = database.collection("retrievers");
+
+    // Query your MongoDB collection to get the message
+    const result = await collection.findOne({ "_id": new ObjectId("64f5d3ebfed127df07f4c996") });
+
+    // Log the message to the console
+    console.log("Message from MongoDB:", result.message);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();

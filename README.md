@@ -42,6 +42,8 @@ If you want to change the port mappings or container configurations, modify the 
 
 -- Client code can be found in the client directory.
 
+To testdbconnection: node server/database.js
+
 Troubleshooting:
 
 If you encounter any issues or errors, check the container logs using the following command:
