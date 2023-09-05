@@ -21,10 +21,11 @@ services:
       - "8080:8080"
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./server:/app
+    # volumes:
+    #   - ./server:/app
     networks:
-      - mynetwork 
+      - mynetwork
+    command: ["npm", "start"]
 
   mongodb:
     image: mongo:4.4
