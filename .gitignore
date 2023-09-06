@@ -132,3 +132,6 @@ dist
 # React
 build/
 .env
+
+#mongodb folder
+mongo_data/
