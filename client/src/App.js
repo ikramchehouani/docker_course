@@ -9,7 +9,6 @@ function App() {
         <Routes>
           {/* Route to display the Message component */}
           <Route path="/message" element={<Message/>} />
-          {/* Other routes */}
         </Routes>
       </div>
     </Router>

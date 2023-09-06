@@ -13,10 +13,10 @@ function Message() {
         console.error("Error:", error);
       });
   }, []);
-
+  
   return (
     <div>
-      <h1>Hello from Database:</h1>
+      <h1>Message from Database:</h1>
       <p>{message}</p>
     </div>
   );
