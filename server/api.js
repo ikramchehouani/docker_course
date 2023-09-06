@@ -4,7 +4,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 const uri = "mongodb://icram:nonmaislol@clusterFirst";
 
-router.get('http:localhost:3000/get-message', async (req, res) => {
+router.get('/get-message', async (req, res) => {
   try {
 
     const hardcodedId = "64f5d3ebfed127df07f4c996";

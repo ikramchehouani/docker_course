@@ -14,7 +14,7 @@ services:
     networks:
       - mynetwork 
   server:
-    image: node:14
+    image: node:16
     build:
       context: ./server
     ports:
