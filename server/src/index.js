@@ -1,9 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 4000; // Use the provided PORT or default to 4000
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

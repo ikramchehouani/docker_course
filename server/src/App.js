@@ -1,9 +1,9 @@
-import React from 'react';
+const express = require('express');
+const app = express();
 
-function App() {
-  return (
-      <div className="App"></div>
-  );
-}
 
-export default App;
+const apiRoutes = require('./api');
+app.use('/api', apiRoutes);
+
+
+module.exports = app;

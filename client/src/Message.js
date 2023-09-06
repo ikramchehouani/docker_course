@@ -10,7 +10,7 @@ function Message() {
         setMessage(response.data.message);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error when requesting message:", error);
       });
   }, []);
   

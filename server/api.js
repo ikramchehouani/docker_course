@@ -13,11 +13,11 @@ router.get('http:localhost:3000/get-message', async (req, res) => {
 
     await client.connect();
 
-    // Access the "ika" database and "retrievers" collection
+    // Access "ika" database and "retrievers" collection
     const database = client.db("ika");
     const collection = database.collection("retrievers");
 
-    // Query MongoDB collection to get the message by _id
+    // Query collection to get the message by _id
     const result = await collection.findOne({ _id: new ObjectId(hardcodedId) });
 
     if (result) {
